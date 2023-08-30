@@ -5,9 +5,9 @@ export const DropDown = (props) => {
   return (
     <div>
       <label>{props.name}:</label>
-      <select id={props.id}>
-        {props.shapeList?.map((shape, index) => (
-          <option key={index} value="shape">
+      <select id={props.id} onChange={props.changeFunction}>
+        {props.optionsList?.map((shape, index) => (
+          <option key={index} value={shape}>
             {" "}
             {shape}{" "}
           </option>

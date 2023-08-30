@@ -4,6 +4,7 @@ import "./App.css";
 import { useShapes } from "./hooks/useShapes.js";
 import { DropDown } from "./components/DropDown.jsx";
 import { CenterObject } from "./components/CenterObject";
+import { shapeChange } from "./utils/ShapeChange.js";
 
 function App() {
   const shapes = useShapes();
@@ -16,7 +17,12 @@ function App() {
         />
       </header>
       <main>
-        <DropDown name="Shape" id="shape" shapeList={shapes}></DropDown>
+        <DropDown
+          name="Shape"
+          id="shape"
+          optionsList={shapes}
+          changeFunction={shapeChange}
+        ></DropDown>
         <DropDown name="Color Scheme" id="color"></DropDown>
         <CenterObject></CenterObject>
       </main>
