@@ -1,0 +1,11 @@
+/*Fonts and coloring*/
+label {
+  color: white;
+}
+select {
+  color: white;
+  border: var(--border-size-5) solid var(--gray-0);
+}
+option {
+  color: black;
+}

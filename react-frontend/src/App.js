@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+
+import { useShapes } from "./hooks/useShapes.js";
+import { DropDown } from "./components/DropDown.jsx";
+import { CenterObject } from "./components/CenterObject";
 
 function App() {
+  const shapes = useShapes();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/open-props/normalize.dark.min.css"
+        />
       </header>
+      <main>
+        <DropDown name="Shape" id="shape" shapeList={shapes}></DropDown>
+        <DropDown name="Color Scheme" id="color"></DropDown>
+        <CenterObject></CenterObject>
+      </main>
     </div>
   );
 }

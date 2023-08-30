@@ -1,0 +1,28 @@
+/*Inital shapes*/
+.Square {
+  width: 100px;
+  height: 100px;
+  background: white;
+}
+
+.Circle {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+}
+
+.Triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid white;
+}
+
+/* Centering it in middle of screen*/
+#CenterObject {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+}
