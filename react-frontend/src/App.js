@@ -24,7 +24,7 @@ function App() {
           changeFunction={shapeChange}
         ></DropDown>
         <DropDown name="Color Scheme" id="color"></DropDown>
-        <CenterObject></CenterObject>
+        <CenterObject shapeList={shapes}></CenterObject>
       </main>
     </div>
   );
