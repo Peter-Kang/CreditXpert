@@ -7,8 +7,8 @@ export const CenterObject = (props) => {
     initClass = props.shapeList[0];
   }
   return (
-    <div id="CenterObject" className={initClass}>
-      {" "}
+    <div id="centerObject" className={initClass}>
+      <div id="centerObjectHeader"></div>
     </div>
   );
 };
