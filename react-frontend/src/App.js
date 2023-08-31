@@ -5,9 +5,30 @@ import { useShapes } from "./hooks/useShapes.js";
 import { DropDown } from "./components/DropDown.jsx";
 import { CenterObject } from "./components/CenterObject";
 import { shapeChange } from "./utils/ShapeChange.js";
+import { useColorScheme } from "./hooks/useColorScheme.js";
+import { colorSchemeChange } from "./utils/ColorSchemeChange";
+import { useEffect } from "react";
 
 function App() {
   const shapes = useShapes();
+  const colorScheme = useColorScheme();
+  const colorSchemeNames = Object.keys(colorScheme);
+
+  //initialize the object's color and color scheme
+  let initColorScheme = "";
+  let initColorSchemeList = [];
+  if (colorSchemeNames?.length > 0) {
+    const colorListNames = colorSchemeNames;
+    initColorScheme = colorListNames[0];
+    initColorSchemeList = colorScheme[initColorScheme];
+    const initColor = initColorSchemeList[0];
+    document.getElementById("centerObject").style.background = initColor;
+    document
+      .getElementById("centerObject")
+      .setAttribute("colorscheme", initColorScheme);
+    console.log(initColorScheme);
+  }
+
   return (
     <div className="App">
       <header>
@@ -23,8 +44,16 @@ function App() {
           optionsList={shapes}
           changeFunction={shapeChange}
         ></DropDown>
-        <DropDown name="Color Scheme" id="color"></DropDown>
-        <CenterObject shapeList={shapes}></CenterObject>
+        <DropDown
+          name="Color Scheme"
+          id="color"
+          optionsList={colorSchemeNames}
+          changeFunction={colorSchemeChange}
+        ></DropDown>
+        <CenterObject
+          shapeList={shapes}
+          colorSchemeCollection={colorScheme}
+        ></CenterObject>
       </main>
     </div>
   );
