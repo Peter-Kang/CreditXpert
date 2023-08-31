@@ -19,7 +19,6 @@ namespace CSharpBackend.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            //return new string[] { "Red,White,Blue", "", "purple" };
             return Ok(new CollectionResponse<string>
             {
                 Rainbow = new[] { "red", "orange", "yellow", "green", "blue", "purple"},
