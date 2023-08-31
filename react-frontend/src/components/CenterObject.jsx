@@ -7,9 +7,9 @@ export const CenterObject = (props) => {
   if (props.shapeList?.length > 0) {
     initClass = props.shapeList[0];
   }
-  const [position, setPostiion] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const trackPos = (data) => {
-    setPostiion({ x: data.x, y: data.y });
+    setPosition({ x: data.x, y: data.y });
     console.log(position);
   };
 
