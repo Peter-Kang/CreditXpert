@@ -26,7 +26,6 @@ function App() {
     document
       .getElementById("centerObject")
       .setAttribute("colorscheme", initColorScheme);
-    console.log(initColorScheme);
   }
   if (shapes?.length > 0) {
     const center = document.getElementById("centerObject");

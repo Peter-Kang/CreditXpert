@@ -22,9 +22,7 @@ export const CenterObject = (props) => {
       windowWidthRatio > windowHeightRatio
         ? windowWidthRatio
         : windowHeightRatio;
-    console.log(props);
     const indexToUse = Math.floor(ratioToUse * (currentScheme.length - 1));
-    console.log(props.colorSchemeCollection[currentSchemeName][indexToUse]);
     document.getElementById("centerObject").style.background =
       props.colorSchemeCollection[currentSchemeName][indexToUse];
   };
