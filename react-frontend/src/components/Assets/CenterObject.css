@@ -1,23 +1,20 @@
 /*Inital shapes*/
-.Square {
+[shape="Square"] {
   width: 100px;
   height: 100px;
   background: white;
 }
 
-.Circle {
+[shape="Circle"] {
   width: 100px;
   height: 100px;
   background: white;
   border-radius: 50%;
 }
 
-.Triangle {
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-bottom: 100px solid white;
+[shape="Rectangle"] {
+  width: 200px;
+  height: 100px;
 }
 
 /* Centering it in middle of screen*/

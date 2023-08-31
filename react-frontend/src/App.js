@@ -28,7 +28,10 @@ function App() {
       .setAttribute("colorscheme", initColorScheme);
     console.log(initColorScheme);
   }
-
+  if (shapes?.length > 0) {
+    const center = document.getElementById("centerObject");
+    center.setAttribute("shape", shapes[0]);
+  }
   return (
     <div className="App">
       <header>

@@ -3,6 +3,6 @@ export const shapeChange = (selectedOption) => {
   if (center) {
     const selectedText =
       selectedOption.currentTarget[selectedOption.target.selectedIndex].value;
-    center.setAttribute("class", selectedText);
+    center.setAttribute("shape", selectedText);
   }
 };

@@ -13,7 +13,7 @@ namespace CSharpBackend.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            string[] result = new string[] { "Circle", "Square", "Triangle" };
+            string[] result = new string[] { "Circle", "Square", "Rectangle" };
             return Ok(result);
         }
     }

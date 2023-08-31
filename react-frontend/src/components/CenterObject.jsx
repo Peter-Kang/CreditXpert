@@ -3,11 +3,7 @@ import Draggable from "react-draggable";
 import { useRef, useState, React } from "react";
 
 export const CenterObject = (props) => {
-  let initClass = "";
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  if (props.shapeList?.length > 0) {
-    initClass = props.shapeList[0];
-  }
   const trackPos = (data) => {
     setPosition({ x: data.x, y: data.y });
     let windowWidthRatio = 0;
@@ -39,8 +35,9 @@ export const CenterObject = (props) => {
       <div
         ref={nodeRef}
         id="centerObject"
-        className={initClass}
+        shape=""
         colorscheme=""
+        className=""
       ></div>
     </Draggable>
   );
