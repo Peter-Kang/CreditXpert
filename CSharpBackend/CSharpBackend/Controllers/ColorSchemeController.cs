@@ -7,10 +7,26 @@ namespace CSharpBackend.Controllers
     [ApiController]
     public class ColorSchemeController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public class CollectionResponse<T>
         {
-            return new string[] { "Red,White,Blue", "", "purple" };
+            public IEnumerable<T> Rainbow { get; set; }
+
+            public IEnumerable<T> American { get; set; }
+
+            public IEnumerable<T> Resistors { get; set; }
+        }
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            //return new string[] { "Red,White,Blue", "", "purple" };
+            return Ok(new CollectionResponse<string>
+            {
+                Rainbow = new[] { "red", "orange", "yellow", "green", "blue", "purple"},
+                American = new[] { "red", "white", "blue" },
+                Resistors = new[] { "brown", "red", "orange", "yellow", "green","blue","purple","grey", "white", "black"}
+            });
+
         }
 
     }
