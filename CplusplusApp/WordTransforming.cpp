@@ -80,7 +80,7 @@ bool WordTransforming::transformWordRecursiveStep(const std::string& currentWord
 		{
 			if (previousIndices.find(i) == previousIndices.end())
 			{
-				//get 4 indicies swaps
+				//get indicies swaps
 				std::string current_word_layer = currentWord;
 				//swap
 				current_word_layer[i] = m_SecondWord[i];
