@@ -7,15 +7,15 @@
 int main()
 {
     std::string first_word = "";
-    while (first_word.size() != 4)
+    while (first_word.size() == 0)
     {
-        std::cout << "Please enter in a four letter word\n";
+        std::cout << "Please enter in a letter word\n";
         std::cin >> first_word;
     }
     std::string second_word = "";
-    while (second_word.size() != 4)
+    while (second_word.size() == 0)
     {
-        std::cout << "Please enter in another four letter word\n";
+        std::cout << "Please enter in another word\n";
         std::cin >> second_word;
     }
     WordTransforming word_transforming = WordTransforming(first_word, second_word);

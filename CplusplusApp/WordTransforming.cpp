@@ -1,15 +1,18 @@
 #include "WordTransforming.h"
 #include <iostream>
 #include <fstream>
+#include <cctype>
 
 static const std::string FILE_NAME = "dictionary.txt";
-static  const int CHARACTER_LENGTH = 4;
 
 WordTransforming::WordTransforming(const std::string& firstWord, const std::string& secondWord) 
 {
 	//set words
 	m_FirstWord = firstWord;
 	m_SecondWord = secondWord;
+	//toLower
+	ToLowerCaseInPlace(m_FirstWord);
+	ToLowerCaseInPlace(m_SecondWord);
 	//read in dictionary
 	m_Dictionary = std::unordered_set<std::string>();
 	std::ifstream myfile(FILE_NAME);
@@ -18,6 +21,7 @@ WordTransforming::WordTransforming(const std::string& firstWord, const std::stri
 		{
 			std::string line;
 			std::getline(myfile,line);
+			ToLowerCaseInPlace(line);
 			m_Dictionary.insert(line);
 		}
 	}
@@ -38,6 +42,14 @@ std::unordered_set<std::string>& WordTransforming::getDictionary(void)
 	return m_Dictionary;
 }
 
+void WordTransforming::ToLowerCaseInPlace(std::string & value)
+{
+	for ( int i = 0; i<value.size(); i++ ) 
+	{
+		value[i] = tolower(value[i]);
+	}
+}
+
 bool WordTransforming::transform(void) 
 {
 	bool result = false;
@@ -53,7 +65,7 @@ bool WordTransforming::transform(void)
 bool WordTransforming::transformWordRecursiveStep(const std::string& currentWord, const std::unordered_set<int>& previousIndices, const std::vector<std::string>& previousWords) 
 {
 	bool result = false;
-	if ( previousWords.size() == CHARACTER_LENGTH+1)
+	if (currentWord == m_SecondWord)
 	{
 		std::cout << "Found Sequence" << std::endl;
 		for (std::string word: previousWords) 
@@ -64,7 +76,7 @@ bool WordTransforming::transformWordRecursiveStep(const std::string& currentWord
 	}
 	else 
 	{
-		for ( int i =0; i< CHARACTER_LENGTH; i++)
+		for ( int i =0; i< m_FirstWord.size(); i++)
 		{
 			if (previousIndices.find(i) == previousIndices.end())
 			{

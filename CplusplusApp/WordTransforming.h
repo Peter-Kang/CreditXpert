@@ -11,6 +11,8 @@ private:
 	std::string m_SecondWord;
 
 	std::unordered_set<std::string> m_Dictionary;
+
+	void ToLowerCaseInPlace(std::string& value);
 	
 public:
 
