@@ -84,8 +84,20 @@ bool WordTransforming::transformWordRecursiveStep(const std::string& currentWord
 				std::string current_word_layer = currentWord;
 				//swap
 				current_word_layer[i] = m_SecondWord[i];
+
+				//check if the words has been found
+				bool already_exists = false;
+				for (int j =0; j<previousWords.size(); j++)
+				{
+					if ( previousWords[j] == current_word_layer)
+					{
+						already_exists = true;
+						break;
+					}
+				}
+
 				//check if it is a valid word
-				if (m_Dictionary.find( current_word_layer) != m_Dictionary.end())
+				if (m_Dictionary.find( current_word_layer) != m_Dictionary.end() && already_exists == false)
 				{
 					//move to the next letter
 					std::unordered_set<int> current_indices(previousIndices.begin(), previousIndices.end());
