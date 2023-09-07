@@ -33,12 +33,6 @@ function App() {
   }
   return (
     <div className="App">
-      <header>
-        <link
-          rel="stylesheet"
-          href="https://unpkg.com/open-props/normalize.dark.min.css"
-        />
-      </header>
       <main>
         <DropDown
           name="Shape"
